@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1120" width="900" height="1120">
+  <defs>
+    <clipPath id="clip999"><polygon points="36,0 900,0 900,1084 864,1120 0,1120 0,36"/></clipPath>
+    <radialGradient id="g999" cx="50%" cy="35%" r="78%">
+      <stop offset="0" stop-color="#120E09"/>
+      <stop offset="1" stop-color="#0A0806"/>
+    </radialGradient>
+  </defs>
+  <g clip-path="url(#clip999)">
+    <rect width="900" height="1120" fill="url(#g999)"/>
+    <circle cx="703.2" cy="89.7" r="1.6" fill="#FF7A1A" opacity="0.12"/><circle cx="118.9" cy="894.5" r="1.0" fill="#CBFF4D" opacity="0.16"/><circle cx="87.7" cy="1113.7" r="0.8" fill="#FF7A1A" opacity="0.13"/><circle cx="631.9" cy="284.1" r="1.7" fill="#CBFF4D" opacity="0.09"/><circle cx="568.2" cy="83.8" r="0.6" fill="#FF7A1A" opacity="0.18"/><circle cx="450.2" cy="208.7" r="1.4" fill="#FF7A1A" opacity="0.17"/><circle cx="496.6" cy="1034.5" r="1.2" fill="#CBFF4D" opacity="0.15"/><circle cx="116.7" cy="731.9" r="1.2" fill="#CBFF4D" opacity="0.09"/><circle cx="100.2" cy="943.8" r="0.9" fill="#CBFF4D" opacity="0.09"/><circle cx="451.4" cy="47.3" r="1.5" fill="#FF7A1A" opacity="0.07"/><circle cx="822.3" cy="619.7" r="0.8" fill="#FF7A1A" opacity="0.16"/><circle cx="186.8" cy="580.1" r="0.9" fill="#FF7A1A" opacity="0.13"/><circle cx="773.4" cy="1000.2" r="1.8" fill="#FF7A1A" opacity="0.12"/><circle cx="692.8" cy="636.5" r="1.6" fill="#CBFF4D" opacity="0.07"/><circle cx="341.9" cy="347.3" r="1.5" fill="#FF7A1A" opacity="0.13"/><circle cx="829.7" cy="50.4" r="1.2" fill="#CBFF4D" opacity="0.17"/>
+    
+    <g transform="translate(450.0,416.0) scale(15.3)" opacity="0.4" stroke="#FF7A1A" stroke-width="2.4" fill="none" stroke-linejoin="round">
+      <circle cx="-15" cy="-10" r="5.5"/>
+      <path d="M-34 15 L-9 -6 L4 6 L19 -9 L34 15 Z"/>
+    </g>
+    <text x="450.0" y="740.0" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="43.2" letter-spacing="1.5" fill="#F7F1E4" opacity="0.4">ФОТО ГРУППЫ</text>
+  </g>
+  <polygon points="33,3 897,3 897,1087 867,1117 3,1117 3,33" fill="none" stroke="#FF7A1A" stroke-width="1.6" stroke-dasharray="7 7" opacity="0.38"/>
+</svg>

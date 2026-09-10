@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Организаторам — ANACONDAZ</title>
+<meta name="description" content="Забронировать выступление Anacondaz: технический райдер, форматы и контакты для организаторов.">
+<meta name="theme-color" content="#050403">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23050403'/%3E%3Ctext x='50' y='70' font-family='Arial,sans-serif' font-weight='800' font-size='58' fill='%23FF7A1A' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ANACONDAZ">
+<meta property="og:title" content="Организаторам — ANACONDAZ">
+<meta property="og:description" content="Забронировать выступление Anacondaz: технический райдер, форматы и контакты для организаторов.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Организаторам — ANACONDAZ">
+<meta name="twitter:description" content="Забронировать выступление Anacondaz: технический райдер, форматы и контакты для организаторов.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  .page-hero{padding:190px 44px 70px; max-width:900px;}
+  .page-hero h1{font-size:clamp(42px,7vw,92px);}
+  .page-hero p{margin-top:22px; font-size:18px; line-height:1.65; color:var(--paper); opacity:.75; max-width:600px;}
+
+  .stats-strip{padding:0 44px 120px; display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--iron); border-bottom:1px solid var(--iron);}
+  .stat{padding:36px 24px; border-right:1px solid var(--iron);}
+  .stat:last-child{border-right:none;}
+  .stat .n{font-family:'Manrope'; font-weight:800; font-size:clamp(30px,3.4vw,48px); color:var(--amber-bright);}
+  .stat .l{font-family:'Inter'; font-size:12px; color:var(--ash); margin-top:8px; letter-spacing:.03em;}
+
+  .formats{display:grid; grid-template-columns:repeat(3,1fr); gap:26px;}
+  .format-card{background:var(--void-2); border:1px solid var(--iron); padding:34px 28px;
+    clip-path:polygon(18px 0,100% 0,100% calc(100% - 18px),calc(100% - 18px) 100%,0 100%,0 18px);
+    transition:border-color .3s ease, transform .35s var(--ease-out);}
+  .format-card:hover{border-color:var(--venom); transform:translateY(-4px);}
+  .format-card h3{font-size:24px; margin-bottom:14px;}
+  .format-card ul{list-style:none; margin-top:18px; display:flex; flex-direction:column; gap:10px;}
+  .format-card li{font-size:14.5px; color:var(--ash); padding-left:16px; position:relative;}
+  .format-card li::before{content:''; position:absolute; left:0; top:8px; width:6px; height:1.5px; background:var(--amber);}
+
+  .rider-block{display:grid; grid-template-columns:1fr 1fr; gap:60px;}
+  .rider-col h4{font-family:'Inter'; font-size:12.5px; color:var(--amber-bright); letter-spacing:.05em; margin-bottom:18px;}
+  .rider-col ul{list-style:none; display:flex; flex-direction:column; gap:14px;}
+  .rider-col li{font-size:15.5px; padding-bottom:14px; border-bottom:1px solid var(--iron); display:flex; justify-content:space-between; gap:16px;}
+  .rider-col li span{color:var(--ash); font-family:'Inter'; font-size:12.5px; white-space:nowrap;}
+  .rider-cta{margin-top:44px;}
+
+  .form-wrap{background:var(--void-2); border:1px solid var(--iron); padding:52px;
+    clip-path:polygon(28px 0,100% 0,100% calc(100% - 28px),calc(100% - 28px) 100%,0 100%,0 28px);}
+  .form-grid{display:grid; grid-template-columns:1fr 1fr; gap:26px 30px;}
+  .field{display:flex; flex-direction:column; gap:10px;}
+  .field.full{grid-column:1/-1;}
+  .field label{font-family:'Inter'; font-size:11.5px; color:var(--ash); letter-spacing:.05em;}
+  .field input, .field select, .field textarea{
+    border:none; border-bottom:1px solid var(--iron); padding:12px 2px; font-size:16px; color:var(--paper);
+    transition:border-color .25s ease; background:transparent;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{border-color:var(--amber);}
+  .field select option{background:var(--void);}
+  .field textarea{resize:vertical; min-height:96px;}
+  .form-submit{margin-top:36px; display:flex; align-items:center; gap:22px; flex-wrap:wrap;}
+  .form-note{font-family:'Inter'; font-size:12px; color:var(--ash);}
+  #formStatus{font-family:'Inter'; font-size:13px; color:var(--ash); margin-top:18px; display:none;}
+  #formStatus.ok{display:block; color:var(--venom);}
+
+  @media(max-width:900px){
+    .stats-strip{grid-template-columns:repeat(2,1fr);}
+    .stat:nth-child(2n){border-right:none;}
+    .formats{grid-template-columns:1fr;}
+    .rider-block{grid-template-columns:1fr; gap:34px;}
+    .form-grid{grid-template-columns:1fr;}
+    .form-wrap{padding:32px 24px;}
+    .page-hero{padding:150px 22px 60px;}
+  }
+  @media(max-width:420px){
+    .stat{padding:26px 18px;}
+    .stat .n{font-size:28px;}
+    .format-card{padding:26px 22px;}
+    .rider-col li{flex-direction:column; align-items:flex-start; gap:4px;}
+    .rider-col li span{white-space:normal;}
+    .form-wrap{padding:24px 18px;}
+  }
+</style>
+<noscript><style>
+  body{cursor:auto!important;}
+  .cursor-dot,.cursor-ring,.preloader,.page-wipe{display:none!important;}
+  .reveal{opacity:1!important;transform:none!important;}
+</style></noscript>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="page-wipe" id="pageWipe" aria-hidden="true"></div>
+
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="preloader-word">ORGANIZERS</div>
+  <div class="preloader-bar"></div>
+</div>
+
+<div class="cursor-dot" id="cdot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cring" aria-hidden="true"></div>
+
+<header>
+  <a href="/" class="logo" data-hover data-transition aria-label="ANACONDAZ — на главную">
+    <img src="/logo.svg" alt="ANACONDAZ" width="140" height="47">
+  </a>
+  <nav id="siteNav">
+    <a href="/discography.html" data-hover data-transition>Дискография</a>
+    <a href="/#tour" data-hover data-transition>Тур</a>
+    <a href="/booking.html" class="active" aria-current="page" data-hover>Организаторам</a>
+    <a href="/#contact" data-hover data-transition>Контакты</a>
+    <span class="lang">RU</span>
+  </nav>
+  <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="siteNav"><span></span><span></span><span></span></button>
+</header>
+
+<section class="page-hero">
+  <span class="eyebrow" style="display:block;margin-bottom:18px;">ДЛЯ ОРГАНИЗАТОРОВ</span>
+  <h1 class="reveal">Позовите нас<br>на сцену</h1>
+  <p class="reveal">Клубный концерт, фестивальный сет или частное мероприятие — расскажите, что вы планируете, и мы пришлём условия, райдер и свободные даты.</p>
+</section>
+
+<div class="stats-strip reveal" data-stagger>
+  <div class="stat"><div class="n">17</div><div class="l">ЛЕТ НА СЦЕНЕ</div></div>
+  <div class="stat"><div class="n">8</div><div class="l">СТУДИЙНЫХ АЛЬБОМОВ</div></div>
+  <div class="stat"><div class="n">200+</div><div class="l">ЖИВЫХ ВЫСТУПЛЕНИЙ</div></div>
+  <div class="stat"><div class="n">6</div><div class="l">СТРАН НА ГАСТРОЛЯХ</div></div>
+</div>
+
+<section id="formats">
+  <div class="section-head reveal">
+    <span class="section-tag">ФОРМАТЫ</span>
+    <h2>Как мы выступаем</h2>
+  </div>
+  <div class="formats" data-stagger>
+    <div class="format-card reveal">
+      <h3><i class="ph-bold ph-microphone-stage icon-amber" style="margin-right:8px;"></i>Клубный концерт</h3>
+      <p style="color:var(--ash); font-size:14.5px;">Полный состав, полный сет — фирменная энергия вживую.</p>
+      <ul>
+        <li>Сет 60–90 минут</li>
+        <li>Полный бэклайн-райдер</li>
+        <li>Саунд-чек от 90 минут</li>
+      </ul>
+    </div>
+    <div class="format-card reveal">
+      <h3><i class="ph-bold ph-users-three icon-amber" style="margin-right:8px;"></i>Фестивальный сет</h3>
+      <p style="color:var(--ash); font-size:14.5px;">Сжатая программа под фестивальный тайминг.</p>
+      <ul>
+        <li>Сет 35–45 минут</li>
+        <li>Быстрый монтаж/демонтаж</li>
+        <li>Гибкий бэклайн под площадку</li>
+      </ul>
+    </div>
+    <div class="format-card reveal">
+      <h3><i class="ph-bold ph-guitar icon-amber" style="margin-right:8px;"></i>Акустика / спецформат</h3>
+      <p style="color:var(--ash); font-size:14.5px;">Камерные площадки, кавер-коллаборации, частные события.</p>
+      <ul>
+        <li>Сет 30–60 минут</li>
+        <li>Минимальный бэклайн</li>
+        <li>Обсуждаемо под мероприятие</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="press-kit">
+  <div class="section-head reveal">
+    <span class="section-tag">ПРЕСС-КИТ</span>
+    <h2>Фото для афиш<br>и анонсов</h2>
+  </div>
+  <div class="press-grid reveal" data-stagger>
+    <a class="photo-tile" href="/images/press/1.svg" target="_blank" rel="noopener" data-hover>
+      <img src="/images/press/1.svg" alt="Пресс-фото Anacondaz 1 (заглушка)" loading="lazy">
+      <span class="tile-label"><i class="ph-bold ph-arrow-square-out"></i>Открыть в размере</span>
+    </a>
+    <a class="photo-tile" href="/images/press/2.svg" target="_blank" rel="noopener" data-hover>
+      <img src="/images/press/2.svg" alt="Пресс-фото Anacondaz 2 (заглушка)" loading="lazy">
+      <span class="tile-label"><i class="ph-bold ph-arrow-square-out"></i>Открыть в размере</span>
+    </a>
+    <a class="photo-tile" href="/images/press/3.svg" target="_blank" rel="noopener" data-hover>
+      <img src="/images/press/3.svg" alt="Пресс-фото Anacondaz 3 (заглушка)" loading="lazy">
+      <span class="tile-label"><i class="ph-bold ph-arrow-square-out"></i>Открыть в размере</span>
+    </a>
+    <a class="photo-tile" href="/images/press/4.svg" target="_blank" rel="noopener" data-hover>
+      <img src="/images/press/4.svg" alt="Пресс-фото Anacondaz 4 (заглушка)" loading="lazy">
+      <span class="tile-label"><i class="ph-bold ph-arrow-square-out"></i>Открыть в размере</span>
+    </a>
+    <a class="photo-tile" href="/images/press/5.svg" target="_blank" rel="noopener" data-hover>
+      <img src="/images/press/5.svg" alt="Пресс-фото Anacondaz 5 (заглушка)" loading="lazy">
+      <span class="tile-label"><i class="ph-bold ph-arrow-square-out"></i>Открыть в размере</span>
+    </a>
+    <a class="photo-tile" href="/images/press/6.svg" target="_blank" rel="noopener" data-hover>
+      <img src="/images/press/6.svg" alt="Пресс-фото Anacondaz 6 (заглушка)" loading="lazy">
+      <span class="tile-label"><i class="ph-bold ph-arrow-square-out"></i>Открыть в размере</span>
+    </a>
+  </div>
+  <p class="form-note reveal" style="margin-top:22px;">Это временные заглушки — пришлите реальные кадры, и мы заменим файлы 1:1 без правок вёрстки.</p>
+</section>
+
+<section id="rider">
+  <div class="section-head reveal">
+    <span class="section-tag">ТЕХНИЧЕСКИЙ РАЙДЕР</span>
+    <h2>Что нужно<br>на площадке</h2>
+  </div>
+  <div class="rider-block reveal">
+    <div class="rider-col">
+      <h4>СЦЕНА И ЗВУК</h4>
+      <ul>
+        <li>Минимальный размер сцены <span>8×6 м</span></li>
+        <li>FOH-система под вместимость зала <span>под задачу</span></li>
+        <li>Мониторная линия, 5 линий <span>5×</span></li>
+        <li>Звукооператор на саунд-чек <span>обязательно</span></li>
+      </ul>
+    </div>
+    <div class="rider-col">
+      <h4>СВЕТ И ПОМЕЩЕНИЯ</h4>
+      <ul>
+        <li>Базовый концертный свет <span>по стейдж-плану</span></li>
+        <li>Гримёрка на 6 человек <span>с водой и снеками</span></li>
+        <li>Питание и трансфер <span>по договорённости</span></li>
+        <li>Аккредитация фото/видео <span>по согласованию</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="rider-cta reveal">
+    <a href="mailto:booking@anacondaz.ru?subject=Запрос%20технического%20райдера" class="btn-outline" data-hover data-magnet><i class="ph ph-file-pdf"></i>Запросить полный райдер и стейдж-план</a>
+  </div>
+</section>
+
+<section id="request">
+  <div class="section-head reveal">
+    <span class="section-tag">ЗАЯВКА</span>
+    <h2>Расскажите<br>о мероприятии</h2>
+  </div>
+  <div class="form-wrap reveal">
+    <form id="bookingForm">
+      <div class="form-grid">
+        <div class="field">
+          <label for="name">Ваше имя</label>
+          <input type="text" id="name" required>
+        </div>
+        <div class="field">
+          <label for="org">Организация / площадка</label>
+          <input type="text" id="org" required>
+        </div>
+        <div class="field">
+          <label for="city">Город проведения</label>
+          <input type="text" id="city" required>
+        </div>
+        <div class="field">
+          <label for="date">Желаемая дата</label>
+          <input type="date" id="date">
+        </div>
+        <div class="field">
+          <label for="format">Формат</label>
+          <select id="format">
+            <option>Клубный концерт</option>
+            <option>Фестивальный сет</option>
+            <option>Акустика / спецформат</option>
+            <option>Ещё не определились</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="contactInfo">Email или телефон для связи</label>
+          <input type="text" id="contactInfo" required>
+        </div>
+        <div class="field full">
+          <label for="msg">Детали мероприятия</label>
+          <textarea id="msg" placeholder="Вместимость площадки, бюджет, дополнительные пожелания..."></textarea>
+        </div>
+      </div>
+      <div class="form-submit">
+        <button type="submit" class="btn-amber" data-hover data-magnet><i class="ph-bold ph-paper-plane-tilt"></i>Отправить заявку</button>
+        <span class="form-note">Заявка сохраняется у нас в базе — мы отвечаем в течение 3 дней.</span>
+      </div>
+      <p id="formStatus"></p>
+    </form>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="foot-word">ANACONDAZ</div>
+  <div class="foot-links">
+    <div class="foot-col">
+      <h4>СВЯЗЬ</h4>
+      <a href="mailto:booking@anacondaz.ru" data-hover><i class="ph ph-envelope-simple"></i>booking@anacondaz.ru</a>
+      <a href="mailto:press@anacondaz.ru" data-hover><i class="ph ph-envelope-simple"></i>press@anacondaz.ru</a>
+    </div>
+    <div class="foot-col">
+      <h4>СОЦСЕТИ</h4>
+      <a href="#0" data-hover><i class="ph-fill ph-users-three"></i>VK</a>
+      <a href="#0" data-hover><i class="ph-fill ph-telegram-logo"></i>Telegram</a>
+      <a href="#0" data-hover><i class="ph-fill ph-youtube-logo"></i>YouTube</a>
+    </div>
+    <div class="foot-col">
+      <h4>НАВИГАЦИЯ</h4>
+      <a href="/" data-hover data-transition>Главная</a>
+      <a href="/discography.html" data-hover data-transition>Дискография</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 ANACONDAZ</span>
+    <span>Санкт-Петербург / Астрахань</span>
+  </div>
+</footer>
+
+<script type="module" src="/src/pages/booking.js"></script>
+</body>
+</html>

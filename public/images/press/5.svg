@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <clipPath id="clip155"><polygon points="30,0 1200,0 1200,770 1170,800 0,800 0,30"/></clipPath>
+    <radialGradient id="g155" cx="50%" cy="35%" r="78%">
+      <stop offset="0" stop-color="#120E09"/>
+      <stop offset="1" stop-color="#0A0806"/>
+    </radialGradient>
+  </defs>
+  <g clip-path="url(#clip155)">
+    <rect width="1200" height="800" fill="url(#g155)"/>
+    <circle cx="697.1" cy="431.5" r="1.7" fill="#CBFF4D" opacity="0.15"/><circle cx="499.7" cy="428.1" r="1.6" fill="#FF7A1A" opacity="0.09"/><circle cx="230.6" cy="772.5" r="0.7" fill="#FF7A1A" opacity="0.12"/><circle cx="214.0" cy="190.1" r="1.4" fill="#CBFF4D" opacity="0.12"/><circle cx="1156.2" cy="472.3" r="1.0" fill="#CBFF4D" opacity="0.08"/><circle cx="612.7" cy="509.8" r="0.7" fill="#FF7A1A" opacity="0.16"/><circle cx="696.2" cy="735.8" r="0.9" fill="#FF7A1A" opacity="0.11"/><circle cx="61.6" cy="496.4" r="1.2" fill="#FF7A1A" opacity="0.08"/><circle cx="633.0" cy="715.9" r="0.9" fill="#FF7A1A" opacity="0.12"/><circle cx="458.2" cy="685.9" r="1.2" fill="#FF7A1A" opacity="0.08"/><circle cx="514.0" cy="567.2" r="1.0" fill="#FF7A1A" opacity="0.13"/><circle cx="73.6" cy="473.9" r="1.4" fill="#FF7A1A" opacity="0.06"/><circle cx="156.4" cy="52.2" r="1.1" fill="#FF7A1A" opacity="0.11"/><circle cx="15.6" cy="397.5" r="0.9" fill="#FF7A1A" opacity="0.09"/><circle cx="537.9" cy="360.5" r="0.6" fill="#CBFF4D" opacity="0.06"/><circle cx="793.3" cy="269.0" r="1.5" fill="#FF7A1A" opacity="0.1"/>
+    
+    <g transform="translate(600.0,272.0) scale(13.600000000000001)" opacity="0.4" stroke="#FF7A1A" stroke-width="2.4" fill="none" stroke-linejoin="round">
+      <circle cx="-15" cy="-10" r="5.5"/>
+      <path d="M-34 15 L-9 -6 L4 6 L19 -9 L34 15 Z"/>
+    </g>
+    <text x="600.0" y="560.0" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="38.4" letter-spacing="1.5" fill="#F7F1E4" opacity="0.4">ПРЕСС-ФОТО</text>
+  </g>
+  <polygon points="27,3 1197,3 1197,773 1173,797 3,797 3,27" fill="none" stroke="#FF7A1A" stroke-width="1.6" stroke-dasharray="7 7" opacity="0.38"/>
+</svg>

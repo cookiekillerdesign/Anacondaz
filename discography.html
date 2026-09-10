@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Дискография — ANACONDAZ</title>
+<meta name="description" content="Полная дискография Anacondaz со встроенным плеером Spotify.">
+<meta name="theme-color" content="#050403">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23050403'/%3E%3Ctext x='50' y='70' font-family='Arial,sans-serif' font-weight='800' font-size='58' fill='%23FF7A1A' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ANACONDAZ">
+<meta property="og:title" content="Дискография — ANACONDAZ">
+<meta property="og:description" content="Полная дискография Anacondaz со встроенным плеером Spotify.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Дискография — ANACONDAZ">
+<meta name="twitter:description" content="Полная дискография Anacondaz со встроенным плеером Spotify.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  .page-hero{padding:190px 44px 80px;}
+  .page-hero h1{font-size:clamp(48px,9vw,120px);}
+  .page-hero p{max-width:560px; margin-top:22px; font-size:17px; line-height:1.65; color:var(--paper); opacity:.72;}
+
+  .featured{padding:0 44px 60px;}
+  .featured-inner{
+    background:var(--void-2); border:1px solid var(--iron); padding:36px;
+    display:grid; grid-template-columns:.85fr 1fr; gap:40px; align-items:center;
+    clip-path:polygon(28px 0,100% 0,100% calc(100% - 28px),calc(100% - 28px) 100%,0 100%,0 28px);
+  }
+  .featured-copy .section-tag{margin-bottom:10px;}
+  .featured-copy h2{font-size:clamp(30px,3.6vw,46px); margin-bottom:16px;}
+  .featured-copy p{color:var(--ash); font-size:15px; line-height:1.6; max-width:420px;}
+  .spotify-frame{border-radius:12px; overflow:hidden; border:1px solid var(--iron);}
+
+  .grid-head{padding:100px 44px 0;}
+  .album-grid{padding:44px 44px 60px; display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px;}
+  .album-cell{background:var(--void-2); border:1px solid var(--iron); padding:22px;
+    clip-path:polygon(16px 0,100% 0,100% calc(100% - 16px),calc(100% - 16px) 100%,0 100%,0 16px);
+    transition:border-color .3s ease;}
+  .album-cell:hover{border-color:var(--amber);}
+  .album-cell .head{display:flex; align-items:center; margin-bottom:14px; gap:12px;}
+  .album-cell .t{font-family:'Manrope'; font-weight:700; font-size:18px; line-height:1.25; flex:1;}
+  .album-cell .y{font-family:'Inter'; font-size:11.5px; color:var(--ash); white-space:nowrap;}
+  .album-cell iframe{border-radius:10px; display:block;}
+  .album-cell .cell-cover{object-fit:cover;}
+
+  .follow-strip{padding:0 44px 150px; display:flex; flex-wrap:wrap; gap:16px; align-items:center;}
+  .follow-strip .label{font-family:'Inter'; font-size:12.5px; color:var(--ash); letter-spacing:.05em; margin-right:8px;}
+  .stream-btn{font-family:'Inter'; font-size:12.5px; letter-spacing:.04em; font-weight:600;
+    border:1px solid var(--iron); padding:12px 20px; transition:border-color .25s ease, color .25s ease;}
+  .stream-btn:hover{border-color:var(--venom); color:var(--venom);}
+
+  @media(max-width:900px){
+    .featured-inner{grid-template-columns:1fr;}
+    .page-hero{padding:150px 22px 60px;}
+    .featured, .grid-head, .album-grid, .follow-strip{padding-left:22px; padding-right:22px;}
+    .follow-strip{padding-bottom:90px;}
+  }
+  @media(max-width:420px){
+    .featured-inner{padding:22px;}
+    .album-cell{padding:16px;}
+    .album-grid{gap:20px; padding-top:30px;}
+    .follow-strip{gap:12px; padding-bottom:70px;}
+    .stream-btn{padding:11px 16px; font-size:11.5px;}
+  }
+</style>
+<noscript><style>
+  body{cursor:auto!important;}
+  .cursor-dot,.cursor-ring,.preloader,.page-wipe{display:none!important;}
+  .reveal{opacity:1!important;transform:none!important;}
+</style></noscript>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="page-wipe" id="pageWipe" aria-hidden="true"></div>
+
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="preloader-word">ДИСКОГРАФИЯ</div>
+  <div class="preloader-bar"></div>
+</div>
+
+<div class="cursor-dot" id="cdot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cring" aria-hidden="true"></div>
+
+<header>
+  <a href="/" class="logo" data-hover data-transition aria-label="ANACONDAZ — на главную">
+    <img src="/logo.svg" alt="ANACONDAZ" width="140" height="47">
+  </a>
+  <nav id="siteNav">
+    <a href="/discography.html" class="active" aria-current="page" data-hover>Дискография</a>
+    <a href="/#tour" data-hover data-transition>Тур</a>
+    <a href="/booking.html" data-hover data-transition>Организаторам</a>
+    <a href="/#contact" data-hover data-transition>Контакты</a>
+    <span class="lang">RU</span>
+  </nav>
+  <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="siteNav"><span></span><span></span><span></span></button>
+</header>
+
+<section class="page-hero">
+  <span class="eyebrow" style="display:block;margin-bottom:18px;">ВСЕ РЕЛИЗЫ</span>
+  <h1 class="reveal">Дискография</h1>
+  <p class="reveal">Восемь студийных альбомов за семнадцать лет — от «Смачных ништяков» до «Ночи с астраханцем». Слушайте прямо здесь через Spotify.</p>
+</section>
+
+<section class="featured">
+  <div id="featuredWrap"></div>
+</section>
+
+<div class="grid-head">
+  <div class="section-head reveal" style="margin-bottom:0;">
+    <span class="section-tag">АРХИВ</span>
+    <h2>Прошлые релизы</h2>
+  </div>
+</div>
+
+<div class="album-grid" id="albumGrid"></div>
+
+<div class="follow-strip reveal">
+  <span class="label">СЛУШАТЬ ТАКЖЕ НА:</span>
+  <a href="https://open.spotify.com/artist/2e7yDxnK4osy7nKhnqrOFM" target="_blank" class="stream-btn" data-hover><i class="ph-fill ph-spotify-logo"></i>SPOTIFY АРТИСТ</a>
+  <a href="#0" class="stream-btn" data-hover><i class="ph-fill ph-music-notes"></i>ЯНДЕКС МУЗЫКА</a>
+  <a href="#0" class="stream-btn" data-hover><i class="ph-fill ph-users-three"></i>VK МУЗЫКА</a>
+  <a href="#0" class="stream-btn" data-hover><i class="ph-fill ph-apple-logo"></i>APPLE MUSIC</a>
+  <a href="#0" class="stream-btn" data-hover><i class="ph-fill ph-youtube-logo"></i>YOUTUBE MUSIC</a>
+</div>
+
+<footer id="contact">
+  <div class="foot-word">ANACONDAZ</div>
+  <div class="foot-links">
+    <div class="foot-col">
+      <h4>СВЯЗЬ</h4>
+      <a href="mailto:booking@anacondaz.ru" data-hover><i class="ph ph-envelope-simple"></i>booking@anacondaz.ru</a>
+      <a href="mailto:press@anacondaz.ru" data-hover><i class="ph ph-envelope-simple"></i>press@anacondaz.ru</a>
+    </div>
+    <div class="foot-col">
+      <h4>СОЦСЕТИ</h4>
+      <a href="#0" data-hover><i class="ph-fill ph-users-three"></i>VK</a>
+      <a href="#0" data-hover><i class="ph-fill ph-telegram-logo"></i>Telegram</a>
+      <a href="#0" data-hover><i class="ph-fill ph-youtube-logo"></i>YouTube</a>
+    </div>
+    <div class="foot-col">
+      <h4>НАВИГАЦИЯ</h4>
+      <a href="/" data-hover data-transition>Главная</a>
+      <a href="/booking.html" data-hover data-transition>Организаторам</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 ANACONDAZ</span>
+    <span>Санкт-Петербург / Астрахань</span>
+  </div>
+</footer>
+
+<script type="module" src="/src/pages/discography.js"></script>
+</body>
+</html>

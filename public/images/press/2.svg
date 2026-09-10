@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <clipPath id="clip122"><polygon points="30,0 1200,0 1200,770 1170,800 0,800 0,30"/></clipPath>
+    <radialGradient id="g122" cx="50%" cy="35%" r="78%">
+      <stop offset="0" stop-color="#120E09"/>
+      <stop offset="1" stop-color="#0A0806"/>
+    </radialGradient>
+  </defs>
+  <g clip-path="url(#clip122)">
+    <rect width="1200" height="800" fill="url(#g122)"/>
+    <circle cx="612.0" cy="477.6" r="1.0" fill="#CBFF4D" opacity="0.15"/><circle cx="913.2" cy="366.5" r="1.6" fill="#CBFF4D" opacity="0.13"/><circle cx="127.2" cy="360.1" r="1.8" fill="#FF7A1A" opacity="0.11"/><circle cx="754.0" cy="113.7" r="1.0" fill="#CBFF4D" opacity="0.12"/><circle cx="464.6" cy="778.8" r="1.2" fill="#FF7A1A" opacity="0.07"/><circle cx="715.2" cy="395.1" r="0.9" fill="#CBFF4D" opacity="0.13"/><circle cx="647.6" cy="689.2" r="1.1" fill="#CBFF4D" opacity="0.14"/><circle cx="459.0" cy="364.5" r="1.8" fill="#FF7A1A" opacity="0.06"/><circle cx="1022.7" cy="331.4" r="1.0" fill="#FF7A1A" opacity="0.08"/><circle cx="799.8" cy="495.0" r="1.2" fill="#FF7A1A" opacity="0.1"/><circle cx="831.3" cy="666.9" r="0.7" fill="#FF7A1A" opacity="0.16"/><circle cx="1189.6" cy="621.5" r="1.7" fill="#FF7A1A" opacity="0.16"/><circle cx="886.2" cy="200.9" r="1.5" fill="#FF7A1A" opacity="0.12"/><circle cx="286.7" cy="754.3" r="1.6" fill="#CBFF4D" opacity="0.09"/><circle cx="203.5" cy="147.4" r="1.1" fill="#FF7A1A" opacity="0.15"/><circle cx="479.2" cy="795.6" r="0.7" fill="#FF7A1A" opacity="0.17"/>
+    
+    <g transform="translate(600.0,272.0) scale(13.600000000000001)" opacity="0.4" stroke="#FF7A1A" stroke-width="2.4" fill="none" stroke-linejoin="round">
+      <circle cx="-15" cy="-10" r="5.5"/>
+      <path d="M-34 15 L-9 -6 L4 6 L19 -9 L34 15 Z"/>
+    </g>
+    <text x="600.0" y="560.0" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="38.4" letter-spacing="1.5" fill="#F7F1E4" opacity="0.4">ПРЕСС-ФОТО</text>
+  </g>
+  <polygon points="27,3 1197,3 1197,773 1173,797 3,797 3,27" fill="none" stroke="#FF7A1A" stroke-width="1.6" stroke-dasharray="7 7" opacity="0.38"/>
+</svg>
