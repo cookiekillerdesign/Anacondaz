@@ -10,14 +10,19 @@ const fallbackReleases = [
   { title: 'Ночь с астраханцем', year: 'Альбом · 2025', spotify_album_id: '6n9pF7yHoOfZD63HRHpdX1', featured: true },
   { title: 'Перезвони мне +79995771202', year: 'Альбом · 2021', spotify_album_id: '29rpiWucaS0UFkGGyPlzjt', featured: false },
   { title: 'Синий кит', year: 'Сингл · 2019', spotify_album_id: '3ECq39uz37z2DWVqsOkp24', featured: false },
-  { title: 'Дети и радуга', year: '2013', spotify_album_id: '3CtNVI7ufM3ofkJC5XE9Mc', featured: false },
+  { title: 'Дети и радуга', year: '2012', spotify_album_id: '3CtNVI7ufM3ofkJC5XE9Mc', featured: false },
 ];
 
+// Real upcoming dates as listed on the band's own site, anacondaz.ru — kept
+// current only as of when this was last pulled; replace via Supabase once
+// wired up so the list doesn't quietly go stale.
 const fallbackTour = [
-  { event_date: '14 ФЕВ', city: 'Тбилиси', venue: 'Tbilisi Concert Hall', ticket_url: '#0' },
-  { event_date: '28 ФЕВ', city: 'Ереван', venue: 'Mexico Club', ticket_url: '#0' },
-  { event_date: '12 МАР', city: 'Берлин', venue: 'Astra Kulturhaus', ticket_url: '#0' },
-  { event_date: '26 МАР', city: 'Белград', venue: 'Dom Omladine', ticket_url: '#0' },
+  { event_date: '20 СЕН', city: 'Лимассол', venue: 'Кипр', status: 'onsale', ticket_url: 'https://anacondaz.ru/' },
+  { event_date: '18 НОЯ', city: 'Кишинёв', venue: 'Молдова', status: 'onsale', ticket_url: 'https://anacondaz.ru/' },
+  { event_date: '21–25 НОЯ', city: 'США', venue: 'Восточное и западное побережье', status: 'onsale', ticket_url: 'https://anacondaz.ru/' },
+  { event_date: '30 НОЯ', city: 'Дублин', venue: 'Ирландия', status: 'onsale', ticket_url: 'https://anacondaz.ru/' },
+  { event_date: '4–5 ЯНВ', city: 'Сербия / Черногория', venue: 'Даты уточняются по городам', status: 'onsale', ticket_url: 'https://anacondaz.ru/' },
+  { event_date: 'СКОРО', city: 'Торонто / Ванкувер', venue: 'Канада', status: 'tba', ticket_url: 'https://anacondaz.ru/' },
 ];
 
 function embedSrc(id) {
@@ -47,10 +52,11 @@ async function loadReleases() {
     .map(
       (a, i) => `
     <a class="filmstrip-panel" data-hover href="discography.html" data-transition>
-      <img class="filmstrip-cover" src="${coverFor(i)}" alt="" aria-hidden="true"
-        style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0;">
-      <span class="idx">${String(i + 1).padStart(2, '0')}</span>
-      <div class="play-circle"><i class="ph-fill ph-play"></i></div>
+      <div class="cover-sq">
+        <img src="${coverFor(i)}" alt="" aria-hidden="true">
+        <span class="idx">${String(i + 1).padStart(2, '0')}</span>
+        <div class="play-circle"><i class="ph-fill ph-play"></i></div>
+      </div>
       <div>
         <div class="ft">${a.title}</div>
         <span class="fy">${a.year}</span>
@@ -96,15 +102,21 @@ async function loadTour() {
     }
   }
   document.getElementById('tourList').innerHTML = tour
-    .map(
-      (t) => `
+    .map((t) => {
+      const tba = t.status === 'tba';
+      return `
     <div class="tour-row" data-hover>
       <span class="date">${t.event_date}</span>
       <span class="city">${t.city}</span>
       <span class="venue">${t.venue}</span>
-      <a href="${t.ticket_url || '#0'}" class="ticket-btn">БИЛЕТЫ <i class="ph-bold ph-arrow-right"></i></a>
-    </div>`
-    )
+      <span class="status-pill ${tba ? 'is-tba' : 'is-onsale'}">${tba ? 'Уточняется' : 'Билеты в продаже'}</span>
+      ${
+        tba
+          ? `<span class="ticket-btn is-disabled">СКОРО</span>`
+          : `<a href="${t.ticket_url || 'https://anacondaz.ru/'}" target="_blank" rel="noopener" class="ticket-btn">АФИША <i class="ph-bold ph-arrow-up-right"></i></a>`
+      }
+    </div>`;
+    })
     .join('');
   bindHoverTargets();
   ScrollTrigger.refresh();

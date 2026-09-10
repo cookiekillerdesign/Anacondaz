@@ -16,7 +16,7 @@ const fallbackReleases = [
   { title: 'Перезвони мне +79995771202 (Deluxe)', year: '2022', spotify_album_id: '5XZlSaRAFO0ukaPElUinAy', featured: false },
   { title: 'Перезвони мне +79995771202', year: '2021', spotify_album_id: '29rpiWucaS0UFkGGyPlzjt', featured: false },
   { title: 'Синий кит', year: 'Сингл · 2019', spotify_album_id: '3ECq39uz37z2DWVqsOkp24', featured: false },
-  { title: 'Дети и радуга', year: '2013', spotify_album_id: '3CtNVI7ufM3ofkJC5XE9Mc', featured: false },
+  { title: 'Дети и радуга', year: '2012', spotify_album_id: '3CtNVI7ufM3ofkJC5XE9Mc', featured: false },
 ];
 
 const COMPACT_H = 152; // Spotify's compact single-row embed
